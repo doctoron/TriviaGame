@@ -5,7 +5,8 @@
 </head>
     
 <style>
-    p {
+    p, 
+    #timer {
         text-align: center;
         font-size: 60px;
         margin-top: 0px;
@@ -13,17 +14,18 @@
 </style>
 
         <body>
-            <div for id = "demo">
-                <p id="demo">Minutes remaining: <span id="time">00:00</span> minutes!</p>
+            <div for id = "timer">
+                <p id="timer">Minutes remaining: <span id="time">00:00</span> minutes!</p>
             </div>
             <div for id="timer">
-                <button for id="timer"></button>
-            </div>
-            
-            </body>
+                <button for id="timer" onclick=startTimer()>Let's Begin</button>
+            </div>    
+        </body>
 <script>
-
-let tToken = 3;
+// 
+// Rewrite this using 1) Switch() Case: Default: logic 2) My Date translation 3) use jQuery 
+// $(document).ready(function() {
+let tToken = .5;
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -37,6 +39,9 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = duration;
+            timesUp = true;
+            // $('<p>').document.innerHTML("Sorry, But your time is up!")
+            pause;
         }
     }, 1000);
 }
@@ -46,6 +51,7 @@ window.onload = function () {
         display = document.querySelector('#time');
     startTimer(zeroMinutes, display);
 };
+// })
 
 </script>
 </html>
