@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
     
 <style>
     p, 
-    #timer {
+    #timer,
+    #start-countdown {
         text-align: center;
         font-size: 60px;
         margin-top: 0px;
@@ -14,44 +16,45 @@
 </style>
 
         <body>
-            <div for id = "timer">
-                <p id="timer">Minutes remaining: <span id="time">00:00</span> minutes!</p>
-            </div>
-            <div for id="timer">
-                <button for id="timer" onclick=startTimer()>Let's Begin</button>
+            <div id="start-countdown">
+                <p id="timer-display">Minutes remaining: <span id="time">00:00</span> minutes!</p>
+                <button for id="timer-button">Let's Begin</button>
             </div>    
         </body>
 <script>
 // 
 // Rewrite this using 1) Switch() Case: Default: logic 2) My Date translation 3) use jQuery 
 // $(document).ready(function() {
-let tToken = .5;
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
+let tToken = .25;
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-            timesUp = true;
-            // $('<p>').document.innerHTML("Sorry, But your time is up!")
-            pause;
+$(document).ready(function() {
+    $("#timer-button").click(function() {
+            $("p").startTimer();
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                
+                display.textContent = minutes + ":" + seconds;
+                
+                if (--timer < 0) {
+                    timer = duration;
+                    timesUp = true;
+                }
+            }, 1000);
         }
-    }, 1000);
-}
-
-window.onload = function () {
-    var zeroMinutes = 60 * tToken,
-        display = document.querySelector('#time');
-    startTimer(zeroMinutes, display);
-};
-// })
-
+        
+        window.onload = function () {
+            var zeroMinutes = 60 * tToken,
+            display = document.querySelector('#time');
+            startTimer(zeroMinutes, display);
+        };
+    });
+});
+        
 </script>
 </html>
