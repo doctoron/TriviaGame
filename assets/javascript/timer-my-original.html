@@ -22,7 +22,7 @@
                 <!-- <div id="progressBar"></div> -->
                 <!-- <br> -->
             <p id="timer-display">Time remaining: <span id="time">00:00</span> seconds!</p>
-                <button>Let's Begin</button>
+                <button onclick="start()">Let's Begin</button>
             </div>    
             <script>
                 // From line 25 to 56 is my original code
@@ -69,9 +69,9 @@
                                             
                                             let start = startTimer => {
                                                 var countDownDate = new Date().getSeconds();
-                                                var x = this.setInterval(() => {
-                                                    var now = new Date().getSeconds();
-                                                    
+                                                    this.setInterval(() => {
+                                                    now = new Date().getSeconds();
+                                                    console.log(countDownDate);
                                                     var distance = countDownDate - now;
                                                     
                                                     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -79,11 +79,11 @@
                                                     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                                                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                                                     
-                                                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                                                    document.getElementById("time").innerHTML = minutes + "m `" + seconds + "s "
                                                     + minutes + "m " + seconds + "s ";
                                                     
                                                     if (distance < 0) {
-                                                        clearInterval(x);
+                                                        clearInterval(startTimer);
                                                         document.getElementById("timer-display").innerHTML = "EXPIRED";
                                                     }
                                                 }, 3000);

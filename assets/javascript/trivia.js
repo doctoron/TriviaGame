@@ -1,4 +1,6 @@
-//Tamikia Schatzmann
+// Tamikia Schatzmann
+// Obviously, this is not my work but used as a point of reference.  Not submitted as my assignment!!
+//
 const questionContainer = document.getElementById('triviaQuestions');
 const possibleAnswersContainer = document.getElementById('possibleAnswers');
 const submitAnswerbtn = document.getElementById('submitAnswers');
