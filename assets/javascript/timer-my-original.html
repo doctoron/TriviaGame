@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+    
+<style>
+    p, 
+    #test-progress,
+    #timer,
+    #timer-display,
+    #start-countdown {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+        }
+</style>
+
+        <body>
+            <div id="test-progress">
+                <!-- <div id="progressBar"></div> -->
+                <!-- <br> -->
+            <p id="timer-display">Time remaining: <span id="time">00:00</span> seconds!</p>
+                <button>Let's Begin</button>
+            </div>    
+            <script>
+                // From line 25 to 56 is my original code
+                // Rewrite this using 1) Switch() Case: Default: logic 2) My Date translation 3) use jQuery 
+                // $(document).ready(function() {
+                    // let tToken = .25;
+                    // $(document).ready(function() {
+                        //     $("timer-button").click(function() {
+                            //             $("p").startTimer();
+                            //         function startTimer(duration, display) {
+                                //             var timer = duration, minutes, seconds;
+                                //             setInterval(function () {
+                                    //                 minutes = parseInt(timer / 60, 10);
+                                    //                 seconds = parseInt(timer % 60, 10);
+                                    
+                                    //                 minutes = minutes < 10 ? "0" + minutes : minutes;
+                                    //                 seconds = seconds < 10 ? "0" + seconds : seconds;
+                                    
+                                    //                 display.textContent = minutes + ":" + seconds;
+                                    
+                                    //                 if (--timer < 0) {
+                                        //                     timer = duration;
+                                        //                     timesUp = true;
+                                        //                 }
+                                        //             }, 1000);
+                                        //         }
+                                        
+                                        //         window.onload = function () {
+                                            //             var zeroMinutes = 60 * tToken,
+                                            //             display = document.querySelector('#time');
+                                            //             startTimer(zeroMinutes, display);
+                                            //         };
+                                            //     });
+                                            // });
+                                            
+                                            
+                                            // Set the date we're counting down to
+                                            // Update the count down every 1 second
+                                            // Get todays date and time
+                                            // Find the distance between now and the count down date
+                                            // Time calculations for days, hours, minutes and seconds
+                                            // Output the result in an element with id="demo"
+                                            // If the count down is over, write some text 
+                                            
+                                            let start = startTimer => {
+                                                var countDownDate = new Date().getSeconds();
+                                                var x = this.setInterval(() => {
+                                                    var now = new Date().getSeconds();
+                                                    
+                                                    var distance = countDownDate - now;
+                                                    
+                                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                                    
+                                                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                                                    + minutes + "m " + seconds + "s ";
+                                                    
+                                                    if (distance < 0) {
+                                                        clearInterval(x);
+                                                        document.getElementById("timer-display").innerHTML = "EXPIRED";
+                                                    }
+                                                }, 3000);
+                                            }
+                                            
+                                            </script>
+</body>
+</html>

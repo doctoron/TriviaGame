@@ -1,6 +1,7 @@
 p, 
-#timer,
-#start-countdown {
+#timer-display,
+#time,
+#countdown {
     text-align: center;
     font-size: 60px;
     margin-top: 0px;

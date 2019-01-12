@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------
-// Trivia game JavaScript #2
+// Trivia game JavaScript
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById('submit');

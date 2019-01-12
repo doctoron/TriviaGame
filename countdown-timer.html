@@ -7,54 +7,55 @@
     
 <style>
     p, 
-    #timer,
+    #timer-display,
     #start-countdown {
         text-align: center;
         font-size: 60px;
         margin-top: 0px;
-        }
-</style>
+    }
+    </style>
 
-        <body>
-            <div id="start-countdown">
-                <p id="timer-display">Minutes remaining: <span id="time">00:00</span> minutes!</p>
-                <button for id="timer-button">Let's Begin</button>
-            </div>    
-        </body>
-<script>
-// 
-// Rewrite this using 1) Switch() Case: Default: logic 2) My Date translation 3) use jQuery 
-// $(document).ready(function() {
-let tToken = .25;
-
+<body>
+    <container>
+        <div class="row">
+            <div class="col">
+                <div id="start-countdown">
+                    <p id="timer-display">Minutes remaining: <span id="time">00:00</span> minutes!</p>
+                    <button onclick = "startTimer()">Let's Begin</button>
+                </div>
+            </div>
+        </div>    
+    </container>    
+    
+<script type="text/javascript">
 $(document).ready(function() {
-    $("#timer-button").click(function() {
-            $("p").startTimer();
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-                
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                
-                display.textContent = minutes + ":" + seconds;
-                
-                if (--timer < 0) {
-                    timer = duration;
-                    timesUp = true;
-                }
-            }, 1000);
-        }
-        
-        window.onload = function () {
-            var zeroMinutes = 60 * tToken,
-            display = document.querySelector('#time');
-            startTimer(zeroMinutes, display);
-        };
+    startCountdown();
+    return;
     });
-});
-        
-</script>
+
+function countdown(){
+    var timer =15
+    timer--;
+    $("#timer-display").html("Time Remaining: " + timer + " Seconds");
+    $("#submit").on("click" , function() {
+    timer = 0;
+    return;
+
+    });
+
+    if(timer == -1){
+        timeUp();
+        $("#container2").hide();
+    }
+}
+
+function startCountdown () {
+    setInterval(countdown, 1000);
+}
+function timeUp(){
+    return;
+}
+        </script> 
+    </body>
+
 </html>

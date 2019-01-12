@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Timer Test-Tamekia</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+    <style>
+        p, 
+        #timer,
+        #start-countdown {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            }
+    </style>
+    
+    <body>
+        <div id="start-countdown">
+            <p id="timer-display">Minutes remaining: <span id="time">00:00</span> minutes!</p>
+            <button for id="timer-button">Let's Begin</button>
+        </div>    
+    </body>
+
+<script type="text/javascript">
+let tToken = .25;
+
+
+
+function startTimer() {
+var timesUp = "false"; 
+console.log(timesUp);
+}
+
+// // startTimer() will use the setInterval() method to display the set time (tToken) for the task
+// // The clearInterval() function will be used to stop the time.
+// // 
+function startTimer() {
+
+// DONE: Use setInterval to start the count here and set the clock to running.
+if (!timesUp) {
+    intervalId = setInterval(count, 1000);
+    timerRunning = true;
+}
+};
+function stopTimer() {
+
+// DONE: Use clearInterval to stop the count here and set the clock to not be running.
+clearInterval(intervalId);
+timesUp = false;
+};
+
+</script>
+</html>
