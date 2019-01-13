@@ -20,40 +20,39 @@
         <div class="row">
             <div class="col">
                 <div id="start-countdown">
-                    <p id="timer-display">Minutes remaining: <span id="time">00:00</span> minutes!</p>
-                    <button onclick = "startTimer()">Let's Begin</button>
+                    <p id="timer-display">Time remaining: <span id="time">00:00</span> minutes!</p>
+                    <button>Let's Begin</button>
                 </div>
             </div>
         </div>    
     </container>    
     
 <script type="text/javascript">
-$(document).ready(function() {
+// $(document).ready(function() {
     startCountdown();
-    return;
-    });
+    // return;
+    // });
 
-function countdown(){
-    var timer =15
-    timer--;
+let countdown = () => {
+    var timer = 15
     $("#timer-display").html("Time Remaining: " + timer + " Seconds");
     $("#submit").on("click" , function() {
-    timer = 0;
-    return;
+    timer--;
 
     });
 
-    if(timer == -1){
-        timeUp();
-        $("#container2").hide();
+    if(Math.floor(timer) == 0){
+        timeIsUp();
+        $("#container").hide();
     }
 }
 
-function startCountdown () {
+let startCountdown = () => {
     setInterval(countdown, 1000);
 }
-function timeUp(){
-    return;
+let timeIsUp = () => {
+    document.getElementById("timer-display").innerHTML = "Time's Up!"
+    timeIsUp;
 }
         </script> 
     </body>

@@ -17,20 +17,15 @@
 </head>
     
 <body>
-        <div id="start-countdown">
-            <p id="timer-display">Time remaining: <span id="time">00:00</span> minutes!</p>
-            <button onclick = "startTimer()">Let Us Begin</button>
+        <div id="countdown">
+            <p id="#timer-display">Time remaining: <span id="time-remaining">00:00</span> minutes!</p>
+            <button for id="start-button">Let Us Begin</button>
         </div>    
-        
-        <script type="text/javascript">
-            $(document).ready(function() {
-                const textTarget = "document.getElementByID('timer-display')";
-                let tToken = 3000;
-                let startTimer () => ()
-                    setTimeout(function() {
-                    textTarget.innerHTML = "<p>Your Time is Up!</p>";},tToken));
-                    })
-    </script>    
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/app.js"></script>
+<!-- <script src="main.js"></script> -->
+
 </body>          
 </html>
     
