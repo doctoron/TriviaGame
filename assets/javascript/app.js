@@ -8,9 +8,44 @@
 const timerButton = document.getElementById("timer-button");
 const timerDisplay = document.getElementById("timer-display");
 const tToken = .2;
-let zeroMinutes;
+const testCard =document.getElementById('testObjectArray')
 let time = "00:00";
 let intervalID;
+
+testObjectArray =[
+    {
+    question: "The sternum (breastbone) is composed of three parts:",
+    answers: {
+        a: "Manubrium, Body, Xiphoid process",
+        b: "Manure, Bats, Xylophone",
+        c: "Mandible, Maxilla, Zygomatic bones"
+    },
+    correctAnswer: "a: Manubrium, Body, Xiphoid process",
+    reward: "What is the correct hand placement for CPR?"
+    },
+    {
+    question: "CPR Stands for:",
+    answers: {
+        a: "Can't Pee Right",
+        b: "Cardiopulmonary Regeneration",
+        c: "Cardiopulmonary Resuscitation"
+    },
+    correctAnswer: "c: Cardiopulmonary Resuscitation",
+    reward: "What is the Importance of CPR?"
+
+    },
+    {
+    question: "What is the recommended rate of CPR compressions for an adult victim?",
+    answers: {
+        a: "200-300 per minute",
+        b: "100 to 120 per minute",
+        c: "500-1000 per minute",
+    },
+    correctAnswer: " b: 100 to 120 per minute",
+    reward: "What are the 7 steps of CPR?"
+    },
+];
+
 /* 
 Thanks to Karina I found a good description of modulo/modulus, which is the “%” symbol here 
 @ https://en.m.wikipedia.org/wiki/Modulo_operation  What is happening is the timer takes the 
