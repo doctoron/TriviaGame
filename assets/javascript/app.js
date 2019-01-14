@@ -23,35 +23,36 @@ Code the triva test:
 3) Locate anatomy images API 
 2) Construct Ajax calls using jQuery  
 */
-        // tInit = () => {
-            timerDisplay.innerHTML = `Time remaining: ${time} minutes!`;
-            zeroMinutes =(minute,b) => {
-            60 * tToken,
-            timerDisplay = document.querySelector('#time');
-            startTimer(tToken, timerDisplay);
-        }
-
-
-        startTimer =(duration, timerDisplay) => {
-            var timer = duration, minutes, seconds;
-                intervalID = setInterval( () => {
-                minutes = parseInt(timer / 60, 10)
-                seconds = parseInt(timer % 60, 10);
-                
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                
-                timerDisplay.textContent = minutes + ":" + seconds;
-                
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);   
-        }
-        window.onload = function () {
-            zeroMinutes =(minute,b) => {
-                60 * tToken,
-                timerDisplay = document.querySelector('#time-display');
-                startTimer(zeroMinutes, display);
+// Start here once a click has been detected and call the goInit function: 
+startTimer.addEventListener("click", goInit);
+            goInit = () => {
+                timerDisplay.innerHTML = `Time remaining: ${time} minutes!`;
+                startTimer(tToken, timerDisplay);
             }
-        };
+                // zeroMinutes =(minute,b) => {
+                // 60 * tToken,
+                // timerDisplay = document.querySelector('#time');
+
+
+            startTimer =(duration, timerDisplay) => {
+                    let timer = duration, minutes, seconds;
+                    intervalID = setInterval( () => {
+                    minutes = parseInt(timer / 60, 10)
+                    seconds = parseInt(timer % 60, 10);
+                    
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    
+                    // timerDisplay.textContent = minutes + ":" + seconds;
+                    `
+                    timerDisplay.textContent = Time remaining: ${minutes}:${seconds};
+                    `
+                    console.log(intervalId);
+                    console.log(timerDisplay);
+
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);   
+            }
+

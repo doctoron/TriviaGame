@@ -1,9 +1,20 @@
-p, 
-#test-progress,
-#timer,
-#timer-display,
-#countdown {
-    text-align: center;
-    font-size: 60px;
-    margin-top: 0px;
+<style>
+    .card {
+        align-content: center;
+    }
+    p,
+    #demo,
+    #time,
+    #timer, 
+    #timer-display,
+    #timer-button {
+        text-align: center;
+        align-content: center;
+        font-size: 60px;
+        margin-top: 0px;
+    }
+    .button {
+        background-color:green;
+        align-content: center;
+        font-size: 60px;
     }
