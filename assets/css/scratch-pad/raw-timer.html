@@ -39,20 +39,29 @@
 <body>
 <div class="container">
     <div class ="row">
-        <div class ="col">
-            <div class="card-body">
-                <div class ="card">       
-                    <h2 class="card-title">A COUNTDOWN TIMER SOLUTION:</h2>
+        <div class ="col-12">
+            <div class="w3-panel-body">
+                <div class ="w3-panel">       
+                    <h2 class="w3-panel-title">A COUNTDOWN TIMER SOLUTION:</h2>
                     <p></p>
                     <p id ="timer-display"><span id="timer-display"></span></p> 
-                    <button for id="timer-button" type ="submit">Go</button>
                 </div>        
             </div>
+                <div>
+                        <button for id="w3-timer-button" type ="submit">Go</button>
+                </div>
         </div>
-        <div class="w3-panel w3-card w3-yellow">
-            <p id ="test-card"></p>
-            <button for id="test-question" type="submit"></button>
-        </div>
+            <div class ="row">
+                <div class ="col-12">
+                    <div class ="w3-card-body"> 
+                        <div class ="w3-card w3-yellow">
+                            <p id ="test-card"></p>
+                                <button for id="w3test-question" type="submit">Submit Response</button>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>
 </div>
 <script>
@@ -62,11 +71,9 @@
     const startTimer = document.getElementById("timer-button");
     const tToken = .2;
     const testCard =document.getElementById('testObjectArray')
-    
-
     let time = "00:00";
     let intervalID;
-=[
+testObjectArray =[
     {
     question: "The sternum (breastbone) is composed of three parts:",
     answers: {
@@ -117,7 +124,7 @@ Code the triva test:
 // Start here once a click has been detected and call the goInit function: 
 startTimer.addEventListener("click", goInit);
             goInit = () => {
-                timerDisplay.innerHTML = `Time remaining: ${time} minutes!`;
+                timerDisplay.innerHTML = `Time remaining: ${parseInt(time)} minutes!`;
                 startTimer(tToken, timerDisplay);
             }
                 // zeroMinutes =(minute,b) => {
