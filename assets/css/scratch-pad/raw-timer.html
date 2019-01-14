@@ -52,10 +52,12 @@
 
     const timerButton = document.getElementById("timer-button");
     const timerDisplay = document.getElementById("timer-display");
+    const startTimer = document.getElementById("timer-button");
     const tToken = .2;
-    let zeroMinutes;
+
     let time = "00:00";
     let intervalID;
+    // let zeroMinutes;
 /* 
 Thanks to Karina I found a good description of modulo/modulus, which is the “%” symbol here 
 @ https://en.m.wikipedia.org/wiki/Modulo_operation  What is happening is the timer takes the 
@@ -68,17 +70,17 @@ Code the triva test:
 3) Locate anatomy images API 
 2) Construct Ajax calls using jQuery  
 */
-            // tInit = () => {
+            tInit = () => {
                 timerDisplay.innerHTML = `Time remaining: ${time} minutes!`;
-                zeroMinutes =(minute,b) => {
-                60 * tToken,
-                timerDisplay = document.querySelector('#time');
                 startTimer(tToken, timerDisplay);
             }
+                // zeroMinutes =(minute,b) => {
+                // 60 * tToken,
+                // timerDisplay = document.querySelector('#time');
 
 
             startTimer =(duration, timerDisplay) => {
-                var timer = duration, minutes, seconds;
+                    let timer = duration, minutes, seconds;
                     intervalID = setInterval( () => {
                     minutes = parseInt(timer / 60, 10)
                     seconds = parseInt(timer % 60, 10);
@@ -86,20 +88,19 @@ Code the triva test:
                     minutes = minutes < 10 ? "0" + minutes : minutes;
                     seconds = seconds < 10 ? "0" + seconds : seconds;
                     
-                    timerDisplay.textContent = minutes + ":" + seconds;
-                    
+                    // timerDisplay.textContent = minutes + ":" + seconds;
+                    `
+                    timerDisplay.textContent = Time remaining: ${minutes}:${seconds};
+                    `
+                    console.log(intervalId);
+                    console.log(timerDisplay);
+
                     if (--timer < 0) {
                         timer = duration;
                     }
                 }, 1000);   
             }
-            window.onload = function () {
-                zeroMinutes =(minute,b) => {
-                    60 * tToken,
-                    timerDisplay = document.querySelector('#time-display');
-                    startTimer(zeroMinutes, display);
-                }
-            };
+
                 </script>
     </body>
 </div>
