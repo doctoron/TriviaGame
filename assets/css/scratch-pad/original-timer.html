@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>old timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+
+</head>
+<body>
+    <h2>A COUNTDOWN TIMER SOLUTION:</h2>
+    <p> =========================== </p>
+
+<style>
+    p {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+        }
+</style>
+
+<body>
+    <div for id = "demo">
+        <p id="demo">Minutes remaining: 
+            <span id="time">00:00</span> minutes!</p>
+    </div>
+    <div for id="timer">
+        <button for id="start-button"></button>
+    </div>
+        
+        
+<script>
+/*
+Here’s a good description of modulo/modulus which 
+is the “%” symbol: 
+https://en.m.wikipedia.org/wiki/Modulo_operation   
+What is happening is the timer takes the total time 
+(let’s say 100 seconds) and it assigns minutes by 
+dividing 100 by 60. It finds seconds similarly using 
+the modulus. 60 goes into 100 exactly 1 time and leaves 
+a remainder of 40. 40 would be the seconds. 
+Something along those lines. (edited)
+  
+Plan: 
+1) Switch() Case: Default: logic 
+2) My Date translation 
+3) Construct Ajax calls to either YouTube, using jQuery  
+*/    
+$(document).ready(function() {
+    let stopTimer;
+    var zeroMinutes = 60 * tToken,
+    display = document.querySelector('#time');
+    // startTimer(zeroMinutes, display);    
+    
+$("#start-button").click(function() {
+    let isCounting = "true";
+    console.log("The button was clicked")
+    
+    function startTimer(duration, display) {
+        if( !isCounting) {
+            isCounting = true;
+            let tToken = .6;
+            var timer = duration, minutes, seconds;
+    
+            intervalID = setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+            
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            
+            display.textContent = minutes + ":" + seconds;
+        
+        if (--timer < 0) {
+            timer = duration;
+            clearInterval(intervalId);
+                }
+            }, 1000);
+    
+    
+    }};
+});
+});
+
+// window.onload = function () {
+//     var zeroMinutes = 60 * tToken,
+//     display = document.querySelector('#time');
+//     startTimer(zeroMinutes, display);
+// }
+
+            
+    </script>
+</body>
+</html>

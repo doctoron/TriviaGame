@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>old timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <h2>A COUNTDOWN TIMER SOLUTION:</h2>
+    <p> =========================== </p>
+    
+    </html>
+    <style>
+        p,
+        #demo,
+        #timer,
+        #time-display,
+        #timer-button {
+            align-contents: center;
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+        }
+        </style>
+
+<body>
+    <div for id = "timer`">
+        <!-- <p id="timer">Minutes remaining:  -->
+        <!-- <p id="timer"><span id="time-display">00:00</span> minutes!</p> -->
+        <p id="timer"><span id="time-display"></span></p>
+        <button for id="timer-button">START</button>
+    </div>
+        
+</body>
+    
+    <!-- <script src="assets/javascript/app.js" type="text/javascript"></script> -->
+    <script>
+
+// Start the clock
+// ------------------------------------------------------------------------------------
+// $("#timer-button").click(function() {
+$("#timer-button").on("click",function(){
+    initFunction = () => {
+        let tToken = 3;
+        console.log("The button was clicked" + timer)
+        stopTimer();
+        startTimer(tToken,tDisplay);
+        console.log(tToken);
+    };
+        // document.querySelector('#time-display');
+        // time-display.innerHTML =`Time remaining: ${time}!`;
+        // innerHTML =`Time remaining: ${time}!`;
+        $("#timer").html("Time Remaining: Seconds");
+        $("#time-display").html(timer);
+        //replaceID #timer-button with #submit-button
+            let startTimer = (duration, display) => {     
+                tToken = 3;
+                function startTimer(duration, display) {
+                    if (!isCounting) {
+                        isCounting = true;
+                        var timer = duration, minutes, seconds;
+                            intervalID = setInterval(function () {
+                            minutes = parseInt(timer / 60, 10)
+                            seconds = parseInt(timer % 60, 10);
+                            
+                            minutes = minutes < 10 ? "0" + minutes : minutes;
+                            seconds = seconds < 10 ? "0" + seconds : seconds;
+                            
+                            display.textContent = minutes + ":" + seconds;
+                            
+                    if (--timer < 0) {
+                            timer = duration;
+                            }
+                        }, 1000);
+                    }};
+                
+        // ClearInterval stops the count  and set the clock to not be counting.
+        let stopTimer = () => {
+            display = document.querySelector('#time-display');
+            clearInterval(intervalID);
+            isCounting = false;
+        }}
+    });
+
+        </script>
+    </body>
+</html>
