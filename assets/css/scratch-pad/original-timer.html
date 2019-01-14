@@ -3,34 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>old timer</title>
+    <title>original timer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <script src="main.js"></script> -->
-
 </head>
 <body>
     <h2>A COUNTDOWN TIMER SOLUTION:</h2>
     <p> =========================== </p>
 
 <style>
-    p {
+    p,
+    #time-remaining, {
         text-align: center;
+        align-content: center;
         font-size: 60px;
         margin-top: 0px;
         }
+    .button {
+        background-color:green;
+        align-content: center;
+    }
 </style>
 
 <body>
-    <div for id = "demo">
-        <p id="demo">Minutes remaining: 
-            <span id="time">00:00</span> minutes!</p>
-    </div>
-    <div for id="timer">
-        <button for id="start-button"></button>
+    <div for id ="timer-display">
+        <p id ="timer-display">Time remaining: 
+        <span id ="time-remaining"></span> minutes!</p>
+        <button for id ="start-button" type ="submit" >Go</button>
     </div>
         
         
@@ -52,16 +55,17 @@ Plan:
 3) Construct Ajax calls to either YouTube, using jQuery  
 */    
 $(document).ready(function() {
+    let tToken;
     let stopTimer;
     var zeroMinutes = 60 * tToken,
-    display = document.querySelector('#time');
-    // startTimer(zeroMinutes, display);    
+    display = document.querySelector('#time-remaining');
     
-$("#start-button").click(function() {
-    let isCounting = "true";
-    console.log("The button was clicked")
-    
-    function startTimer(duration, display) {
+    $("#start-button").click(function() {
+        let isCounting = "true";
+        startTimer(zeroMinutes, display);    
+        console.log("The button was clicked")
+        
+    startTimer =(duration, display) => {
         if( !isCounting) {
             isCounting = true;
             let tToken = .6;
@@ -92,8 +96,6 @@ $("#start-button").click(function() {
 //     display = document.querySelector('#time');
 //     startTimer(zeroMinutes, display);
 // }
-
-            
     </script>
 </body>
 </html>
