@@ -8,25 +8,30 @@
 // const trivaCard =document.getElementById("trivia-card")
 // -----------------------------------------------------------------------------------
 // Declaration of variables and assignments:
-const startButton =document.getElementById("test-timer-button");
+$(document).ready(function(){
+const startButton = document.getElementById("test-timer-button");
 const timerDisplay = document.getElementById("test-timer-display");
 let tToken = 37;
-var timer;
 let time = 0;
-let goInit;
 let intervalID;
 let countDown = false;    
+var timer;
+var minutes;
+var seconds;
 
 // Start here once a click has been detected and call the goInit function: 
 startButton.onclick = goInit = () => {
     startTimer(tToken, timerDisplay);
-    timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
+    timerDisplay.innerHTML = `
+    Time remaining: ${time} minutes!
+    `
+    console.log(time);
 }
 
-startTimer =(duration, timerDisplay) => {
+startTimer =(duration, timerDisplay) => {     
     if (!countDown) {
         countDown = true;
-        
+        stopTimer;
         timer = duration, minutes, seconds;
         intervalId = setInterval( () => {
             minutes = parseInt(timer / 60, 10)
@@ -37,8 +42,9 @@ startTimer =(duration, timerDisplay) => {
             
             timerDisplay.textContent = minutes + ":" + seconds;
             console.log(intervalId);
-            // console.log(timerDisplay);
-            
+            console.log(timerDisplay);
+            console.log(minutes);
+
             if (--timer < 0) {
                 timer = duration;
                 clearInterval(intervalId);
@@ -86,3 +92,4 @@ const triviaTest =[
     reward: "What are the 7 steps of CPR?"
     },
 ];
+})

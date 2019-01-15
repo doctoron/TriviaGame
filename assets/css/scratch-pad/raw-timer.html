@@ -65,13 +65,13 @@
 <script>
 
     const triviaCard =document.getElementById('trivia-card')
-    const tButton = document.getElementById("timer-button");
+    const startButton = document.getElementById("timer-button");
     const timerDisplay = document.getElementById("timer-display");
     const tToken = 37;
     var timer;
     let time = 0;
     let intervalID;
-    let goInit;
+    // let goInit;
     let countDown = false;    
     const triviaTest =[
     {
@@ -111,9 +111,12 @@
 
 // tButton.addEventListener("click", goInit);
 // Start here once a click has been detected and call the goInit function:  
-            tButton.onclick = goInit = () => {
+
+            startButton.onclick = goInit = () => {
                 startTimer(tToken, timerDisplay);
-                timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
+                timerDisplay.innerHTML = `
+                Time remaining: ${time} minutes!
+                `
                 console.log(time);
             }
 
