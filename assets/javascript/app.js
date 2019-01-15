@@ -5,13 +5,54 @@
 // Thanks to influences by Stopwatch activity, Michael Pascuczzi &
 // Tamekia Schatzmann for helping with the timer logic code
 // -----------------------------------------------------------------------------------
-const trivaCard =document.getElementById("trivia-card")
-const tButton =document.getElementById("timer-button");
-const timerDisplay = document.getElementById("timer-display");
+// const trivaCard =document.getElementById("trivia-card")
+// -----------------------------------------------------------------------------------
+// Declaration of variables and assignments:
+const startButton =document.getElementById("test-timer-button");
+const timerDisplay = document.getElementById("test-timer-display");
 let tToken = 37;
-let time = "00:30";
+var timer;
+let time = 0;
+let goInit;
 let intervalID;
 let countDown = false;    
+
+// Start here once a click has been detected and call the goInit function: 
+startButton.onclick = goInit = () => {
+    startTimer(tToken, timerDisplay);
+    timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
+}
+
+startTimer =(duration, timerDisplay) => {
+    if (!countDown) {
+        countDown = true;
+        
+        timer = duration, minutes, seconds;
+        intervalId = setInterval( () => {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+            
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            
+            timerDisplay.textContent = minutes + ":" + seconds;
+            console.log(intervalId);
+            // console.log(timerDisplay);
+            
+            if (--timer < 0) {
+                timer = duration;
+                clearInterval(intervalId);
+                stopTimer;
+            }
+        }, 1000);   
+    }
+}
+let stopTimer = () => {
+    clearInterval(intervalId);
+    countDown = !countDown;
+};  
+
+
 const triviaTest =[
     {
     question: "The sternum (breastbone) is composed of three parts:",
@@ -45,40 +86,3 @@ const triviaTest =[
     reward: "What are the 7 steps of CPR?"
     },
 ];
-
-// Start here once a click has been detected and call the goInit function: 
-    tButton.onclick = goInit = () => {
-        startTimer(tToken, timerDisplay);
-        timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
-        console.log(time);
-    }
-
-    startTimer =(duration, timerDisplay) => {
-     if (!countDown) {
-    countDown = "true";
-        
-        let timer = duration, minutes, seconds;
-        intervalId = setInterval( () => {
-            minutes = parseInt(timer / 60, 10)
-            seconds = parseInt(timer % 60, 10);
-            
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-            
-            timerDisplay.textContent = minutes + ":" + seconds;
-            console.log(intervalId);
-            // console.log(timerDisplay);
-            
-            if (--timer < 0) {
-                timer = duration;
-                clearInterval(intervalId);
-                stopTimer;
-            }
-        }, 1000);   
-    }
-}
-let stopTimer = () => {
-    clearInterval(intervalId);
-    countDown = !countDown;
-};  
-

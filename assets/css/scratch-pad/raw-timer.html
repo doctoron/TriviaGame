@@ -68,8 +68,10 @@
     const tButton = document.getElementById("timer-button");
     const timerDisplay = document.getElementById("timer-display");
     const tToken = 37;
+    var timer;
     let time = 0;
     let intervalID;
+    let goInit;
     let countDown = false;    
     const triviaTest =[
     {
@@ -106,8 +108,9 @@
 ];
 
 
-// Start here once a click has been detected and call the goInit function:  
+
 // tButton.addEventListener("click", goInit);
+// Start here once a click has been detected and call the goInit function:  
             tButton.onclick = goInit = () => {
                 startTimer(tToken, timerDisplay);
                 timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
@@ -116,10 +119,10 @@
 
             startTimer =(duration, timerDisplay) => {
                 if (!countDown) {
-                    countDown = "true";
+                    countDown = true;
                               
-                    let timer = duration, minutes, seconds;
-                    intervalId = setInterval( () => {
+                timer = duration, minutes, seconds;
+                intervalId = setInterval( () => {
                     minutes = parseInt(timer / 60, 10)
                     seconds = parseInt(timer % 60, 10);
                     
