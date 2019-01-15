@@ -47,7 +47,7 @@
                 </div>        
             </div>
                 <div>
-                        <button for id="timer-button" type ="submit">Go</button>
+                        <button id="timer-button" type ="submit">Go</button>
                 </div>
         </div>
             <div class ="row">
@@ -65,12 +65,11 @@
 </div>
 <script>
 
-    const timerButton = document.getElementById("timer-button");
-    const timerDisplay = document.getElementById("timer-display");
-    const startTimer = document.getElementById("timer-button");
-    const tToken = .2;
     const testCard =document.getElementById('testObjectArray')
-    let time = "00:00";
+    const tButton = document.getElementById("timer-button");
+    const timerDisplay = document.getElementById("timer-display");
+    const tToken = 30;
+    let time = "00:30";
     let intervalID;
 testObjectArray =[
     {
@@ -108,10 +107,12 @@ testObjectArray =[
 
 
 // Start here once a click has been detected and call the goInit function: 
-startTimer.addEventListener("click", goInit);
-            goInit = () => {
-                timerDisplay.innerHTML = `Time remaining: ${parseInt(time)} minutes!`;
+    
+    // tButton.addEventListener("click", goInit);
+            tButton.onclick = goInit = () => {
                 startTimer(tToken, timerDisplay);
+                timerDisplay.innerHTML = `Time remaining: ${time} minutes!`;
+                console.log(time);
             }
                 // zeroMinutes =(minute,b) => {
                 // 60 * tToken,
@@ -120,26 +121,28 @@ startTimer.addEventListener("click", goInit);
 
             startTimer =(duration, timerDisplay) => {
                     let timer = duration, minutes, seconds;
-                    intervalID = setInterval( () => {
+                    intervalId = setInterval( () => {
                     minutes = parseInt(timer / 60, 10)
                     seconds = parseInt(timer % 60, 10);
                     
                     minutes = minutes < 10 ? "0" + minutes : minutes;
                     seconds = seconds < 10 ? "0" + seconds : seconds;
                     
-                    // timerDisplay.textContent = minutes + ":" + seconds;
-                    `
-                    timerDisplay.textContent = Time remaining: ${minutes}:${seconds};
-                    `
+                    timerDisplay.textContent = minutes + ":" + seconds;
                     console.log(intervalId);
                     console.log(timerDisplay);
 
                     if (--timer < 0) {
                         timer = duration;
+                        clearInterval(intervalId);
                     }
                 }, 1000);   
             }
 
+            x = (t,s) =>{
+               time = tToken * 60;
+               return time;
+            }
                 </script>
     </body>
 </div>
