@@ -36,44 +36,42 @@
     }
 </style>
 <body>
-<div class="container">
-    <div class ="row">
-        <div class ="col-12">
-            <div class="w3-panel-body">
-                <div class ="w3-panel">       
-                    <h2 id="title">CPR Trivia</h2>
-                    <p></p>
-                    <p id ="timerDisplay"><span id="timer-display"></span></p> 
-                </div>        
-            </div>
-                <div>
+    <div class="container">
+        <div class ="row">
+            <div class ="col-12">
+                <div class="w3-panel-body">
+                    <div class ="w3-panel">       
+                        <h2 id="title">CPR Trivia</h2>
+                            <p></p>
+                            <p id ="timerDisplay"><span id="timer-display"></span></p> 
+                    </div>        
+                </div>
+                    <div>
                         <button id="timer-button" type ="submit">Go</button>
-                </div>
-        </div>
-            <div class ="row">
-                <div class ="col-12">
-                    <div class ="w3-card-body"> 
-                        <div class ="w3-card w3-yellow">
-                            <p id ="test-card"></p>
-                                <button for id="test-question" type="submit">Submit Response</button>
-                        </div>            
                     </div>
+            </div>
+        <div class ="row">
+            <div class ="col-12">
+                <div class ="w3-card-body"> 
+                    <div class ="w3-card w3-yellow">
+                        <p id ="trivia-card"></p>
+                        <button for id="trivia-question" type="submit">Submit Response</button>
+                    </div>            
                 </div>
             </div>
-        </div>  
-    </div>
+        </div>
+    </div>  
 </div>
 <script>
 
-    const testCard =document.getElementById('testObjectArray')
+    const triviaCard =document.getElementById('trivia-card')
     const tButton = document.getElementById("timer-button");
     const timerDisplay = document.getElementById("timer-display");
     const tToken = 37;
-    let time = "00:30";
+    let time = 0;
     let intervalID;
-    let countDown;    
-
-    const testObjectArray =[
+    let countDown = false;    
+    const triviaTest =[
     {
     question: "The sternum (breastbone) is composed of three parts:",
     answers: {
@@ -108,9 +106,8 @@
 ];
 
 
-// Start here once a click has been detected and call the goInit function: 
-    
-    // tButton.addEventListener("click", goInit);
+// Start here once a click has been detected and call the goInit function:  
+// tButton.addEventListener("click", goInit);
             tButton.onclick = goInit = () => {
                 startTimer(tToken, timerDisplay);
                 timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
@@ -130,8 +127,8 @@
                     seconds = seconds < 10 ? "0" + seconds : seconds;
                     
                     timerDisplay.textContent = minutes + ":" + seconds;
-                    // console.log(intervalId);
-                    console.log(timerDisplay);
+                    console.log(intervalId);
+                    // console.log(timerDisplay);
 
                     if (--timer < 0) {
                         timer = duration;
@@ -144,9 +141,9 @@
         let stopTimer = () => {
             clearInterval(intervalId);
             countDown = !countDown;
-        }  
-        </script>
-    </body>
+        };  
+    </script>
+</body>
 </div>
 </html>
 

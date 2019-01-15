@@ -5,17 +5,14 @@
 // Thanks to influences by Stopwatch activity, Michael Pascuczzi &
 // Tamekia Schatzmann for helping with the timer logic code
 // -----------------------------------------------------------------------------------
-const testCard =document.getElementById('testObjectArray')
-const tButton = document.getElementById("timer-button");
+const trivaCard =document.getElementById("trivia-card")
+const tButton =document.getElementById("timer-button");
 const timerDisplay = document.getElementById("timer-display");
-const tToken = 37;
+let tToken = 37;
 let time = "00:30";
 let intervalID;
-let countDown;    
-
-
-
-const testObjectArray =[
+let countDown = false;    
+const triviaTest =[
     {
     question: "The sternum (breastbone) is composed of three parts:",
     answers: {
@@ -50,17 +47,15 @@ const testObjectArray =[
 ];
 
 // Start here once a click has been detected and call the goInit function: 
+    tButton.onclick = goInit = () => {
+        startTimer(tToken, timerDisplay);
+        timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
+        console.log(time);
+    }
 
-// tButton.addEventListener("click", goInit);
-tButton.onclick = goInit = () => {
-    startTimer(tToken, timerDisplay);
-    timerDisplay.innerHTML = `Time remaining: ${time} minutes!`
-    console.log(time);
-}
-
-startTimer =(duration, timerDisplay) => {
-    if (!countDown) {
-        countDown = "true";
+    startTimer =(duration, timerDisplay) => {
+     if (!countDown) {
+    countDown = "true";
         
         let timer = duration, minutes, seconds;
         intervalId = setInterval( () => {
@@ -71,8 +66,8 @@ startTimer =(duration, timerDisplay) => {
             seconds = seconds < 10 ? "0" + seconds : seconds;
             
             timerDisplay.textContent = minutes + ":" + seconds;
-            // console.log(intervalId);
-            console.log(timerDisplay);
+            console.log(intervalId);
+            // console.log(timerDisplay);
             
             if (--timer < 0) {
                 timer = duration;
@@ -85,5 +80,5 @@ startTimer =(duration, timerDisplay) => {
 let stopTimer = () => {
     clearInterval(intervalId);
     countDown = !countDown;
-}  
+};  
 
