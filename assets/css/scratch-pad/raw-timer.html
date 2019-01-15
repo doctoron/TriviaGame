@@ -20,7 +20,6 @@
         align-content: center;
     }
     p,
-    #demo,
     #time,
     #timer, 
     #timer-display,
@@ -107,19 +106,6 @@ testObjectArray =[
     },
 ];
 
-
-/* 
-Thanks to Karina I found a good description of modulo/modulus, which is the “%” symbol here 
-@ https://en.m.wikipedia.org/wiki/Modulo_operation  What is happening is the timer takes the 
-total time (let’s say 100 seconds) and it assigns minutes by dividing 100 by 60.  It finds 
-seconds similarly using the modulus. 60 goes into 100 exactly 1 time and leaves a remainder 
-of 40 and this would used to calculate the seconds. (edited)
-Plan:
-Code the triva test: 
-1) Switch() Case: Default: logic 
-3) Locate anatomy images API 
-2) Construct Ajax calls using jQuery  
-*/
 
 // Start here once a click has been detected and call the goInit function: 
 startTimer.addEventListener("click", goInit);
