@@ -15,9 +15,9 @@ let tToken = 37;
 let time = 0;
 let intervalID;
 let countDown = false;    
-var timer;
-var minutes;
-var seconds;
+let timer;
+let minutes;
+let seconds;
 
 // Start here once a click has been detected and call the goInit function: 
 startButton.onclick = goInit = () => {
@@ -93,3 +93,10 @@ const triviaTest =[
     },
 ];
 })
+/* Plan:
+perform multiple $(.ajax) calls for the correct 
+answers on loading (to minimize asynchronicity), 
+place the URL of the highest and best ones based
+on:
+Rating
+url (source ranking)
