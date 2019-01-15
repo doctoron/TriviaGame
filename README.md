@@ -9,3 +9,16 @@ Hopefully we can learn something about the complex, but wonderful you.
 Basic question were chosen to make this humerous rather than a structured pedegogical approach.  It is nonetheless a proof of concept.
 The timer gave me the most challenge as I sought to understand how each line, that worked, until I broke it. LOL!
 Great learning experiences come from challenges.
+/* 
+Thanks to Karina I found a good description of modulo/modulus, which is the “%” symbol here 
+@ https://en.m.wikipedia.org/wiki/Modulo_operation  What is happening is the timer takes the 
+total time (let’s say 100 seconds) and it assigns minutes by dividing 100 by 60.  It finds 
+seconds similarly using the modulus. 60 goes into 100 exactly 1 time and leaves a remainder 
+of 40 and this would used to calculate the seconds. (edited)
+
+Plan:
+Code the triva test: 
+1) Switch() Case: Default: logic 
+3) Locate anatomy images API 
+2) Construct Ajax calls using jQuery  
+*/
