@@ -1,0 +1,76 @@
+html{
+    background: url("../../images/CPR-Heart.jpeg") no-repeat center center fixed;
+    -webkit-backdrop-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body {
+  height: 100%;
+}
+
+
+body {
+  text-align: center;
+  /* background-image: url("../../images/CPR-Heart.jpeg"); */
+  
+}
+
+#wrapper {
+  width: 960px;
+  height: 95%;
+  box-sizing: border-box;
+  margin: 2.5% auto;
+  /* Cream colored background #FFFDD0*/
+  background-color: #fffdd0;
+  z-index: -1;
+}
+
+#sub-wrapper {
+  position: relative;
+  top: 15%;
+}
+
+button {
+  display: block;
+  width: 50%;
+  height: 20%;
+  margin: 0 auto;
+  font-size: 42px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+img {
+  height: 200px;
+}
+
+h1 {
+  padding-top: 2.5%;
+  font-family: Geo, sans-serif;
+  font-size: 6.5em;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 35px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+#start {
+  margin-top: 10%;
+  background: pink;
+  border: 2px solid blue;
+}
+
+button:hover {
+  background: pink;
+  border: 2px solid blue;
+}
