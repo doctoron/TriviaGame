@@ -19,6 +19,11 @@
   padding: 15px;
   border: 1px solid red;
 }
+
+#quiz-area {
+  align-content: center;
+}
+
 html { 
   background: url('https://media.giphy.com/media/cd6Fp0qEGR3ag/giphy.gif?cid=e1bb72ff5c54fcb5425a653377a00d16') no-repeat center center fixed;
   -webkit-backdrop-size: cover;
