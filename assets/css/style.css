@@ -20,6 +20,11 @@
         margin-bottom: 20px;
     }
     h1 {
-        
+        padding-top: 2.5%;
+        font-family: Geo, sans-serif;
+        font-size: 6.5em;
+        font-weight: bold;
+        text-shaddow: 2px 2px #000000;
+        color: #ff0000;
     }
 /* ---------------------------------------------------- */
