@@ -42,8 +42,10 @@ body {
 #counter-number {
  
 }
-button {
- 
+
+#button {
+  border-bottom-width: 2px;
+  margin-bottom: 20px;
 }
 
 img {
