@@ -101,6 +101,7 @@ var game = {
 
     nextQuestion: function () {
         this.counter = window.parseInt(countStartNumber);
+        // this.counter = window.countStartNumber;
         $("#counter-number").text(this.counter);
         this.currentQuestion++;
         this.loadQuestion.bind(this)();
@@ -109,9 +110,8 @@ var game = {
     timeUp: function () {
         console.log(window.timer);
         clearInterval(window.timer);
-
+        
         $("#counter-number").text(this.counter);
-
 
         card.html("<h2>Time's Up!</h2>");
         card.append("<h3>The Correct Answer was: " + questions[this.currentQuestion].correctAnswer);
@@ -206,6 +206,7 @@ $(document).on("click", ".answer-button", function (e) {
 });
 
 $(document).on("click", "#start", function () {
-    $(".timer-container").prepend("<h2>Time Remaining: <span id='counter-number'></span> Seconds</h2>");
+    card.prepend("<h2>Time Remaining: <span id='#counter-number'></span> Seconds</h2>");
     game.loadQuestion.bind(game)();
+    // $("#counter-number").prepend("<h2>Time Remaining: <span id='counter-number'></span> Seconds</h2>");
 });

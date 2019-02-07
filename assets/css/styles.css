@@ -77,8 +77,16 @@ h1 {
 
 }
 
+#counter-number {
+  font-size: 60px;
+  text-align: center;
+  color: #ff0000;
+  text-shadow: 2px 2px #ffffff;
+}
+
 h2 {
-  color: black;
+  color: #000000;
+  text-shadow: #ffffff;
   margin-bottom: 25px;
   font-size: 35px;
 }
