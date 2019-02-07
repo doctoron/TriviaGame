@@ -121,6 +121,8 @@ var game = {
         }
         else {
             setTimeout(this.nextQuestion, 3 * 1000);
+            card.append("<br><button id='start-over'>Start Over?</button>");
+
         }
     },
 
@@ -128,7 +130,7 @@ var game = {
 
         clearInterval(window.timer);
 
-        card.html("<h2>All done, here's how you did!</h2>");
+        card.html("<h2>All done! Here's how you did:</h2>");
 
         $("#counter-number").text(this.counter);
 
@@ -202,6 +204,6 @@ $(document).on("click", ".answer-button", function (e) {
 });
 
 $(document).on("click", "#start", function () {
-    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'></span> Seconds</h2>");
+    $(".timer-container").prepend("<h2>Time Remaining: <span id='counter-number'></span> Seconds</h2>");
     game.loadQuestion.bind(game)();
 });
