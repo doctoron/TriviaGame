@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+    
+<style>
+    p, 
+    #timer-display,
+    #start-countdown {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+    }
+    </style>
+
+<body>
+    <container>
+        <div class="row">
+            <div class="col">
+                <div id="start-countdown">
+                    <p id="timer-display">Time remaining: <span id="time">00:00</span> minutes!</p>
+                    <button>Let's Begin</button>
+                </div>
+            </div>
+        </div>    
+    </container>    
+    
+<script type="text/javascript">
+// $(document).ready(function() {
+    startCountdown();
+    // return;
+    // });
+
+let countdown = () => {
+    var timer = 15
+    $("#timer-display").html("Time Remaining: " + timer + " Seconds");
+    $("#submit").on("click" , function() {
+    timer--;
+
+    });
+
+    if(Math.floor(timer) == 0){
+        timeIsUp();
+        $("#container").hide();
+    }
+}
+
+let startCountdown = () => {
+    setInterval(countdown, 1000);
+}
+let timeIsUp = () => {
+    document.getElementById("timer-display").innerHTML = "Time's Up!"
+    timeIsUp;
+}
+        </script> 
+    </body>
+
+</html>

@@ -1,130 +1,12 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // Trivia game JavaScript
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-// -----------------------------------------------------------------------------------
-// Thanks to influences by Stopwatch activity, Michael Pascuczzi &
-// Tamekia Schatzmann for helping with the timer logic code
-// -----------------------------------------------------------------------------------
-// const trivaCard =document.getElementById("trivia-card")
-// -----------------------------------------------------------------------------------
-// Declaration of variables and assignments:
-// $(document).ready(function () {
-//     const startButton = document.getElementById("test-timer-button");
-//     const timerDisplay = document.getElementById("test-timer-display");
-//     let tToken = 37;
-//     let time = 0;
-//     let intervalID;
-//     let countDown = false;
-//     let timer;
-//     let minutes;
-//     let seconds;
 
-//     // Start here once a click has been detected and call the quizInit function: 
-//     startButton.onclick = quizInit = () => {
-//         startTimer(tToken, timerDisplay);
-//         timerDisplay.innerHTML = `
-//     Time remaining: ${time} minutes!
-//     `
-//         console.log(time);
-//     }
+let card = $("#quiz-area");
+let countStartNumber = 20;
 
-//     startTimer = (duration, timerDisplay) => {
-//         if (!countDown) {
-//             countDown = true;
-//             stopTimer;
-//             timer = duration, minutes, seconds;
-//             intervalId = setInterval(() => {
-//                 minutes = parseInt(timer / 60, 10)
-//                 seconds = parseInt(timer % 60, 10);
-
-//                 minutes = minutes < 10 ? "0" + minutes : minutes;
-//                 seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//                 timerDisplay.textContent = minutes + ":" + seconds;
-//                 console.log(intervalId);
-//                 console.log(timerDisplay);
-//                 console.log(minutes);
-
-//                 if (--timer < 0) {
-//                     timer = duration;
-//                     clearInterval(intervalId);
-//                     stopTimer;
-//                 }
-//             }, 1000);
-//         }
-//     }
-//     let stopTimer = () => {
-//         clearInterval(intervalId);
-//         countDown = !countDown;
-//     };
-
-
-//     const triviaTest = [
-//         {
-//             question: "The sternum (breastbone) is composed of three parts:",
-//             answers: {
-//                 a: "Manubrium, Body, Xiphoid process",
-//                 b: "Manure, Bats, Xylophone",
-//                 c: "Mandible, Maxilla, Zygomatic bones"
-//             },
-//             correctAnswer: "a: Manubrium, Body, Xiphoid process",
-//             reward: "What is the correct hand placement for CPR?"
-//         },
-//         {
-//             question: "CPR Stands for:",
-//             answers: {
-//                 a: "Can't Pee Right",
-//                 b: "Cardiopulmonary Regeneration",
-//                 c: "Cardiopulmonary Resuscitation"
-//             },
-//             correctAnswer: "c: Cardiopulmonary Resuscitation",
-//             reward: "What is the Importance of CPR?"
-
-//         },
-//         {
-//             question: "What is the recommended rate of CPR compressions for an adult victim?",
-//             answers: {
-//                 a: "200-300 per minute",
-//                 b: "100 to 120 per minute",
-//                 c: "500-1000 per minute",
-//             },
-//             correctAnswer: " b: 100 to 120 per minute",
-//             reward: "What are the 7 steps of CPR?"
-//         },
-//     {
-//         question: "What is the first question you must ask before you respond to any first aid situation?"
-//             a: "Age of the injured or ill person"
-//             b: "Safety of the scene"
-//             c: "Nature of the injury"
-//             d: "Time of the injury"
-//     },
-//     correctAnswer: "b: Ensuring the safety of the scene is critical. Avoid making yourself another injured/ill person."
-//     reward: "Staying Alive Music"
-// }
-//     ];
-// })
-
-
-// countdown: function () {
-//     this.counter--;
-//     $("#counter-number").text(this.counter); //put timer on screen @ id='counter-number'
-//     if (this.counter === 0) {
-//         console.log("Time's Up!");
-//         this.timeUp();
-//     }
-// },
-// loadQuestion: function () {
-//     timer = setInterval(this.countdown.bind(this), 1000);
-
-//     CanvasRenderingContext2D.html("<h2>" + questions[this.currentQuestion].question + "</h2>");
-
-
-//     const quizContainer = document.getElementById('quiz');
-//     const resultsContainer = document.getElementById('results');
-//     const submitButton = document.getElementById('quiz-submit')
-
-var card = $("#quiz-area");
-var countStartNumber = 45;
+let rightAns = 'https://media.giphy.com/media/13aaIESJDm56q4/giphy.gif?cid=e1bb72ff5c55021a3233704b490642df'
+let wrongAns = 'https://media3.giphy.com/media/P8JICFoNrKDrW/giphy.gif?cid=e1bb72ff5c55021a3233704b490642df'
 
 
 let questions = [{
@@ -136,7 +18,9 @@ let questions = [{
         'Clavical, Manubrium, Thoracic cage'
     ],
     correctAnswer: 'Manubrium, Body, Xiphoid process',
-    reward: 'http://gph.is/2gBccpV'
+    reward: rightAns,
+    wrong: wrongAns
+
 },
 {
     question: 'CPR Stands for:',
@@ -147,7 +31,9 @@ let questions = [{
         'Cardiac Pulse Rhythm'
     ],
     correctAnswer: 'Cardiopulmonary Resuscitation',
-    reward: 'http://gph.is/1GFiT0r'
+    reward: rightAns,
+    wrong: wrongAns
+
 },
 {
     question: 'What is the recommended rate of CPR compressions for an adult victim?',
@@ -158,7 +44,9 @@ let questions = [{
         'As fast as your own heart rate'
     ],
     correctAnswer: '100 to 120 per minute',
-    reward: 'http://youtu.be/hnMVus3hrWw'
+    reward: rightAns,
+    wrong: wrongAns
+
 },
 {
     question: 'What is the first question you must ask before you respond to any first aid situation?',
@@ -169,23 +57,15 @@ let questions = [{
         'Time of the injury'
     ],
     correctAnswer: 'Safety of the scene',
-    reward: 'http://www.youtube.com/embed/Ey--wndekTU?start=6'
+    reward: rightAns,
+    wrong: wrongAns
 }
 ];
 
-// let game = {
-//     question: questions,
-//     currentQuestion: 0,
-//     counter: countStartNumber,
-//     correct = 0,
-//     wrong = 0,
-//     rightAns = 'https://media0.giphy.com/media/4xpB3eE00FfBm/200w.gif?cid=e1bb72ff5c5082806241595a51dd485b',
-//     wrongAns = 'https://media.giphy.com/media/26xBCBhu6NiOp2ZjO/giphy.gif',
-//     doBetter = 'https://media3.giphy.com/media/9xijGdDIMovchalhxN/200w.gif?cid=e1bb72ff5c5082e835634c5749854049',
-//     failTry = 'https://media.giphy.com/media/26xBCBhu6NiOp2ZjO/giphy.gif',
 
-// Variable to hold our setInterval
+// variable to hold our setInterval
 var timer;
+
 
 var game = {
     questions: questions,
@@ -204,40 +84,45 @@ var game = {
     },
 
     loadQuestion: function () {
-// Binding the timer interval countdown function to the current question
+        // Binding the timer interval countdown function to the current question
         timer = setInterval(this.countdown.bind(this), 1000);
 
         card.html("<h2>" + questions[this.currentQuestion].question + "</h2>");
 
-// Dynamically generate question one at a time
+        // Dynamically generate question one at a time
         for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
-            //
+            // Cursor position becomes clickable event
             card.append("<button class='answer-button' id='button' data-name='" + questions[this.currentQuestion].answers[i]
                 + "'>" + questions[this.currentQuestion].answers[i] + "</button>");
         }
     },
+
     nextQuestion: function () {
-        this.counter = window.countStartNumber;
+        this.counter = window.parseInt(countStartNumber);
         $("#counter-number").text(this.counter);
         this.currentQuestion++;
         this.loadQuestion.bind(this)();
     },
 
     timeUp: function () {
-
+        console.log(window.timer);
         clearInterval(window.timer);
 
         $("#counter-number").text(this.counter);
 
-        card.html("<h2>Out of Time!</h2>");
-        card.append("<h3>The Correct Answer was: " + questions[this.currentQuestion].correctAnswer);
-        card.append("<img src='" + questions[this.currentQuestion].reward + "' />");
 
-        if (this.currentQuestion === questions.length - 1) {
+        card.html("<h2>Time's Up!</h2>");
+        card.append("<h3>The Correct Answer was: " + questions[this.currentQuestion].correctAnswer);
+        card.append("<img src='" + questions[this.currentQuestion].wrong + "' />");
+
+        if (this.currentQuestion === questions.length) {
             setTimeout(this.results, 3 * 1000);
+
         }
         else {
             setTimeout(this.nextQuestion, 3 * 1000);
+            card.append("<br><button id='start-over'>Start Over?</button>");
+
         }
     },
 
@@ -245,7 +130,7 @@ var game = {
 
         clearInterval(window.timer);
 
-        card.html("<h2>All done, here's how you did!</h2>");
+        card.html("<h2>All done! Here's how you did:</h2>");
 
         $("#counter-number").text(this.counter);
 
@@ -266,14 +151,14 @@ var game = {
     },
 
     answeredIncorrectly: function () {
-
+        // add to wrong answer counter
         this.incorrect++;
 
         clearInterval(window.timer);
 
-        card.html("<h2>Nope!</h2>");
+        card.html("<h2>Sorry, That's Incorrect!</h2>");
         card.append("<h3>The Correct Answer was: " + questions[this.currentQuestion].correctAnswer + "</h3>");
-        card.append("<img src='" + questions[this.currentQuestion].reward + "' />");
+        card.append("<img src='" + questions[this.currentQuestion].wrong + "' />");
 
         if (this.currentQuestion === questions.length - 1) {
             setTimeout(this.results.bind(this), 3 * 1000);
@@ -288,8 +173,10 @@ var game = {
         clearInterval(window.timer);
 
         this.correct++;
+
         card.html("<h2>Correct!</h2>");
         card.append("<img src='" + questions[this.currentQuestion].reward + "' />");
+
 
         if (this.currentQuestion === questions.length - 1) {
             setTimeout(this.results.bind(this), 3 * 1000);
@@ -298,7 +185,6 @@ var game = {
             setTimeout(this.nextQuestion.bind(this), 3 * 1000);
         }
     },
-
     reset: function () {
         this.currentQuestion = 0;
         this.counter = countStartNumber;
@@ -307,6 +193,7 @@ var game = {
         this.loadQuestion();
     }
 };
+
 
 // CLICK EVENTS
 
@@ -317,6 +204,6 @@ $(document).on("click", ".answer-button", function (e) {
 });
 
 $(document).on("click", "#start", function () {
-    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>45</span> Seconds</h2>");
+    $(".timer-container").prepend("<h2>Time Remaining: <span id='counter-number'></span> Seconds</h2>");
     game.loadQuestion.bind(game)();
 });
