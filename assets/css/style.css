@@ -12,9 +12,22 @@
         font-size: 60px;
         margin-top: 0px;
     }
-    .button {
+    #button {
         background-color:green;
         align-content: center;
         font-size: 60px;
+        border-bottom-width: 2px;
+        margin-bottom: 20px;
     }
+<<<<<<< HEAD
+=======
+    h1 {
+        padding-top: 2.5%;
+        font-family: Geo, sans-serif;
+        font-size: 6.5em;
+        font-weight: bold;
+        text-shaddow: 2px 2px #000000;
+        color: #ff0000;
+    }
+>>>>>>> 5eda9de186be2930d0641cdad1d0fb20c3b2615a
 /* ---------------------------------------------------- */
