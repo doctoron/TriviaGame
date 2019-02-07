@@ -16,9 +16,14 @@ total time (let’s say 100 seconds) and it assigns minutes by dividing 100 by 6
 seconds similarly using the modulus. 60 goes into 100 exactly 1 time and leaves a remainder 
 of 40 and this would used to calculate the seconds. (edited)
 
-Plan:
-Code the triva test: 
-1) Switch() Case: Default: logic 
-3) Locate anatomy images API 
-2) Construct Ajax calls using jQuery  
-*/
+With study and practice, I found out that the timer code could be much simpler and function just as well once
+I used parseInt() to rid the pesty NaN error I was getting.  
+
+I also discovered that it is easier to manipulate an array within an array, than trying to retrieve embedded objects
+within the array.  Changing the structure of the array made it easier to complete the test.
+
+Instead of using ajax calls to the giphy api, I decide to assign the full file and path name to the variables that would produce the results for correct or incorrect answers.  
+
+Extending the test questions to make it a fun 'pre-test' for anyone considering taking either the American Heart Association
+or Red Cross CPR course.  This is NOT for health care practicioners, but could be adapted to accomplish the written
+portion of the BLS, ACLS, PALS, etc. with very little effort.
