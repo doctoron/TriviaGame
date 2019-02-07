@@ -8,9 +8,11 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.9; 
+  opacity: 1.0; 
 } 
-
+.jumbotron {
+  background-color: #5bb899
+}
 .header {
   border: 1px solid red;
   padding: 15px;
@@ -23,6 +25,12 @@ html {
   border: 1px solid red;
 }
 
+#sub-wrapper {
+  background-color: #689668;
+  align-content: center;
+  text-align: center;
+}
+
 .main {
   width: 75%;
   float: left;
@@ -30,10 +38,11 @@ html {
   border: 1px solid red;
 }
 #quiz-area {
+  font-size: 32px;
   align-content: center;
   text-align: center;
   color: #000000;
-  background-color: yellow;
+  background-color: #ffff00;
 }
 
 
@@ -60,6 +69,8 @@ p,
 }
 body {
   color: black;
+  background-color: #689668;
+
 }
 
 img {
