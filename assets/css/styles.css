@@ -45,7 +45,10 @@ body {
 
 #button {
   border-bottom-width: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  
+
 }
 
 img {
